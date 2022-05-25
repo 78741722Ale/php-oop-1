@@ -12,14 +12,16 @@ class Movie {
     public $poster; // Immagine
     public $lang; // lingua del film
     public $vote; // Vote average 
+    public $overview; //Overview lorem ipsum
 
     /* Avvio la Function construct */
-    function __construct(String $_title, Int $_release, $_poster, $_lang, Int $_vote) {
+    function __construct(String $_title, Int $_release, String $_poster, String $_lang, Int $_vote, String $_overview ) {
         $this->title = $_title;
         $this->release = $_release;
         $this->poster = $_poster;
         $this->lang = $_lang;
         $this->vote = $_vote;
+        $this->overview = $_overview;
     }
 };
 
@@ -33,15 +35,16 @@ var_dump($prova); */
 
 $products = [
     /* Prima Classe - Blade Runner */
-    new Movie('Avatar', 2009, 'https://image.tmdb.org/t/p/w342/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg', 'en', 7.5 ),
-    new Movie('Blade Runner', 2017, 'https://image.tmdb.org/t/p/w342/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg', 'en', 7.5 ),
-    new Movie('Ghost in the Shell', 2017, 'https://image.tmdb.org/t/p/w342/myRzRzCxdfUWjkJWgpHHZ1oGkJd.jpg', 'en', 6 ),
-    new Movie('Altered Carbon: Resleeved', 2020, 'https://image.tmdb.org/t/p/w342/vlIYzx7cc4Wvaoh7ShjF2HZG45.jpg', 'en', 6.5 ),
-    new Movie('Snowden', 2016, 'https://image.tmdb.org/t/p/w342/yfK7zxNL63VWfluFuoUaJj5PdNw.jpg', 'en', 7.1 ),
+    new Movie('Avatar', 2009, 'https://image.tmdb.org/t/p/w342/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg', 'en', 7.5, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, cumque.' ),
+    new Movie('Blade Runner', 2017, 'https://image.tmdb.org/t/p/w342/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg', 'en', 7.5, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, cumque.' ),
+    new Movie('Ghost in the Shell', 2017, 'https://image.tmdb.org/t/p/w342/myRzRzCxdfUWjkJWgpHHZ1oGkJd.jpg', 'en', 6, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, cumque.' ),
+    new Movie('Altered Carbon: Resleeved', 2020, 'https://image.tmdb.org/t/p/w342/vlIYzx7cc4Wvaoh7ShjF2HZG45.jpg', 'en', 6.5, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, cumque.' ),
+    new Movie('Snowden', 2016, 'https://image.tmdb.org/t/p/w342/yfK7zxNL63VWfluFuoUaJj5PdNw.jpg', 'en', 7.1, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, cumque.' ),
+    new Movie('Dune', 2021, 'https://image.tmdb.org/t/p/w342/d5NXSklXo0qyIYkgV94XAgMIckC.jpg', 'en', 7.9, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, cumque.' ),
 ];
 
-var_dump("Questo è il console log dell'array"); 
-var_dump($products);
+/* var_dump("Questo è il console log dell'array"); 
+var_dump($products); */
 
 
 /* Link API per dei film/serie 
@@ -50,10 +53,49 @@ https://api.themoviedb.org/3/search/movie?api_key=98d2bdd48bfc7c3ba0b288ac94e069
 
 PER IMMAGINE poster
 ImageLink: "https://image.tmdb.org/t/p/w342/+ SUA BACKDROP DEL JSON "
-
-
 */
-
-
-
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP-OOP-1</title>
+    <!-- Link a CDN Bootstrp -->
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+    <!-- Link a foglio di style -->
+    <link rel='stylesheet' href='./css/style.css'>
+</head>
+<body>
+    <!-- /#site_header -->
+    <div class="flex_cent" id="site_header">
+        <h1>PHP-OOP-1</h1>
+    </div>
+    <!-- /#site_main -->    
+    <div class="flex_cent p-4" id="site_main">
+        <!-- Container Principale -->
+        <div class="container-xl flex_cent p-0 h-100">
+            <!-- Row container -->
+            <div class="row gap-4 flex_cent flex-column w-100 h-100 bordo p-0 m-0 flex-wrap">
+                <div class="col-3 rel p-0 h_45">
+                    <!-- Immagine della card -->
+                    <!-- <img class="bordo w-100 h-100 p-0" src="<?= $product->poster ?>" alt="<?= $product->title ?>"> -->
+                    <!-- Informazioni Card -->
+                    <div class="bordo w-100 h-100 p-0 abs bg-danger flex-column d-flex justify-content-start align-items-start">
+                        <!-- Title -->
+                        <h4 class="ps-2 pt-1">title <?= $product->title ?></h4>
+                        <!-- Anno d'uscita -->
+                        <span class="ps-2 pt-2">release <?= $product->release ?></span>
+                        <!-- Lingua -->
+                        <span class="ps-2 pt-2">lang <?= $product->lang ?></span>
+                        <!-- Voto -->
+                        <span class="ps-2 pt-2">voto <?= $product->vote ?></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

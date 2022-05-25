@@ -1,0 +1,57 @@
+/* Regola Generale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    /* Overflow Nascosto */
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.bordo {
+    border: 1px solid black;
+}
+.flex_cent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h_45 {
+    height: 45%;
+}
+
+/* Posizioni */
+.rel {
+    position: relative;
+}
+.abs {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+
+
+
+/* Site Header */
+#site_header {
+    background-color: rgb(21, 22, 21);
+    height: 100px;
+    width: 100%;
+    box-shadow: 0 0 10px black;
+    /* Color */
+    color: white;
+}
+
+/* Site Main */
+#site_main {
+    background-color: rgb(77, 80, 77);
+    height: calc(100% - 100px);
+    width: 100%;
+    /* Color */
+    color: white;
+}

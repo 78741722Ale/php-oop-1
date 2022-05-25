@@ -14,6 +14,12 @@ class Movie {
     public $vote; // Vote average 
     public $overview; //Overview lorem ipsum
 
+    /* Avvio Di un method per voto causale - NON CI SONO RIUSCITO */
+        /* function randomVote($min, $max) {
+        return $this->$vote = rand($min,$max);
+    } */
+ 
+    
     /* Avvio la Function construct */
     function __construct(String $_title, Int $_release, String $_poster, String $_lang, Int $_vote, String $_overview ) {
         $this->title = $_title;

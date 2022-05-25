@@ -74,25 +74,25 @@ ImageLink: "https://image.tmdb.org/t/p/w342/+ SUA BACKDROP DEL JSON "
         <h1>PHP-OOP-1</h1>
     </div>
     <!-- /#site_main -->    
-    <div class="flex_cent p-4" id="site_main">
+    <div class="flex_cent p-2" id="site_main">
         <!-- Container Principale -->
         <div class="container-xl flex_cent p-0 h-100">
             <!-- Row container -->
-            <div class="row gap-4 flex_cent flex-column w-100 h-100 bordo p-0 m-0 flex-wrap">
+            <div class="row gap-3 flex_cent flex-column w-100 h-100 p-0 m-0 flex-wrap">
                 <?php foreach ($products as $product) : ?>
                 <div class="col-3 rel p-0 h_45">
                     <!-- Immagine della card -->
-                    <!-- <img class="bordo w-100 h-100 p-0" src="<?= $product->poster ?>" alt="<?= $product->title ?>"> -->
+                    <img class="w-100 h-100 p-0" src="<?= $product->poster ?>" alt="<?= $product->title ?>">
                     <!-- Informazioni Card -->
-                    <div class="bordo w-100 h-100 p-0 abs bg-danger flex-column d-flex justify-content-start align-items-start">
+                    <div class="w-100 h-100 p-0 abs desc flex-column d-flex justify-content-start align-items-start">
                         <!-- Title -->
                         <h4 class="ps-2 pt-1"><?= $product->title ?></h4>
                         <!-- Anno d'uscita -->
-                        <span class="ps-2 pt-2"><?= $product->release ?></span>
+                        <span class="ps-2 pt-2">Release: <?= $product->release ?></span>
                         <!-- Lingua -->
-                        <span class="ps-2 pt-2"><?= $product->lang ?></span>
+                        <span class="ps-2 pt-2">Lang: <?= $product->lang ?></span>
                         <!-- Voto -->
-                        <span class="ps-2 pt-2"><?= $product->vote ?></span>
+                        <span class="ps-2 pt-2">Vote: <?= $product->vote ?></span>
                         <!-- Descrizione -->
                         <span class="ps-2 pt-2">Film Overview: </span>
                         <span class="ps-2 pt-2"><?= $product->overview ?></span>

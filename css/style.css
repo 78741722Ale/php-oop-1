@@ -1,3 +1,6 @@
+
+/*#region Regole generali */
+
 /* Regola Generale */
 * {
     margin: 0;
@@ -11,31 +14,27 @@ body {
     overflow-y: hidden;
     overflow-x: hidden;
 }
-.bordo {
-    border: 1px solid black;
-}
+/*#endregion */
+
+/*#region Posizionamenti */
 .flex_cent {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.h_45 {
-    height: 45%;
-}
-
-/* Posizioni */
+/* Position relative */
 .rel {
     position: relative;
 }
+/* Position Absolute for cards */
 .abs {
     position: absolute;
     top: 0%;
     left: 0%;
 }
+/*#endregion */
 
-
-
+/*#region Containers */
 
 /* Site Header */
 #site_header {
@@ -55,3 +54,31 @@ body {
     /* Color */
     color: white;
 }
+
+
+
+
+
+
+
+
+/*#endregion */
+
+/* Regole Cards generali */
+.h_45 {
+    height: 45%;
+}
+
+.col-3:hover .desc {
+background-color: #140c0c;
+    filter: opacity(95%);
+    color: white;
+    display: block;
+}
+.desc {
+    color: transparent;
+    display: none;
+    z-index: 10;
+}
+
+
